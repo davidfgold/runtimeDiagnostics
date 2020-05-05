@@ -1,2 +1,2 @@
 # runtimeDiagnostics
-runtime diagnostic scripts for the Borg MOEA
+A library of funcitons to read and visualize runtime output of the Borg MOEA.
