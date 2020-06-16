@@ -2,6 +2,7 @@ import numpy as np
 from matplotlib import pyplot as plt
 import mpl_toolkits.mplot3d.axes3d as p3
 import matplotlib.animation as animation
+from yellowbrick.features import RadViz
 
 """
 
@@ -243,6 +244,12 @@ def plot_paxis(ax, objs, i):
     ax.set_xticks([0,1,2])
     ax.set_xticklabels(['Obj 1', 'Obj 2', 'Obj 3'], fontsize=12)
     ax.set_xlim([0, len(objs[i][0,:])-1])
+    
+def plot_Radvis(objectives, ax, name):
+    class_dummy = np.zeros(len(objectives))
+    visualizer = RadViz(classes=[name], ax=ax, alpha=.75)
+    visualizer.fit(objectives, class_dummy)
+    visualizer.show()
 
 
 
