@@ -1,7 +1,8 @@
 #/bin/bash
 
-SEED=$1
+FORM=$1
+NFE=$2
 
-JAVA_ARGS="-cp MOEAFramework-2.9-Demo.jar"
-java ${JAVA_ARGS} org.moeaframework.analysis.sensitivity.ResultFileEvaluator -d 3 -i runtime/DTLZ2_S${SEED}.runtime -r sets/DTLZ2.reference -o DTLZ2_S${SEED}.metrics
+JAVA_ARGS="-cp MOEAFramework-2.13-Demo.jar"
+java ${JAVA_ARGS} org.moeaframework.analysis.sensitivity.ResultFileEvaluator -d 6 -i WaterPaths/output/*S${FORM}_N${NFE}*.runtime -r runtimeDiagnostics/F${FORM}_N${NFE}_set.reference -o Triangle_F${FORM}_N${NFE}.metrics
 
